@@ -1,6 +1,7 @@
 package com.example.disasterapp
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,7 +30,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val adapterDisaster = DisasterAdapter(generateDummy())
+        val adapterDisaster = DisasterAdapter(generateDummy()) { disaster ->
+            Toast.makeText(this@MainActivity, "You clicked on ${disaster.nameDisaster}",
+                Toast.LENGTH_SHORT).show()
+        }
         with(binding) {
             rvDisaster.apply {
                 adapter = adapterDisaster

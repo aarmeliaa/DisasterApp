@@ -10,7 +10,9 @@ data class Disaster (
     val disasterType: String=""
 )
 
-class DisasterAdapter(private val listDisaster : List<Disaster>) : RecyclerView.Adapter<DisasterAdapter
+typealias OnClickDisaster = (Disaster) -> Unit
+
+class DisasterAdapter(private val listDisaster : List<Disaster>, private val onClickDisaster: OnClickDisaster) : RecyclerView.Adapter<DisasterAdapter
     .ItemDisasterViewHolder>()  {
 
     inner class ItemDisasterViewHolder(private val binding: ItemDisasterBinding) :
@@ -19,6 +21,9 @@ class DisasterAdapter(private val listDisaster : List<Disaster>) : RecyclerView.
             with(binding) {
                 txtDisasterName.text = data.nameDisaster
                 txtDisasterType.text = data.disasterType
+                itemView.setOnClickListener {
+                    onClickDisaster(data)
+                }
             }
         }
     }
