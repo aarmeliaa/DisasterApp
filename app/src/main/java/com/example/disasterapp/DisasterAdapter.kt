@@ -5,11 +5,22 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.disasterapp.databinding.ItemDisasterBinding
 
-class DisasterAdapter() : RecyclerView.Adapter<DisasterAdapter
+data class Disaster (
+    val nameDisaster: String="",
+    val disasterType: String=""
+)
+
+class DisasterAdapter(private val listDisaster : List<Disaster>) : RecyclerView.Adapter<DisasterAdapter
     .ItemDisasterViewHolder>()  {
 
     inner class ItemDisasterViewHolder(private val binding: ItemDisasterBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: Disaster) {
+            with(binding) {
+                txtDisasterName.text = data.nameDisaster
+                txtDisasterType.text = data.disasterType
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
@@ -20,9 +31,10 @@ class DisasterAdapter() : RecyclerView.Adapter<DisasterAdapter
     }
 
     override fun onBindViewHolder(holder: ItemDisasterViewHolder, position: Int) {
+        holder.bind(listDisaster[position])
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return listDisaster.size
     }
 }
