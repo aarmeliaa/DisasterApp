@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.disasterapp.databinding.ActivityMainBinding
 
@@ -35,9 +36,16 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT).show()
         }
         with(binding) {
+            // Linear layout manager
+//            rvDisaster.apply {
+//                adapter = adapterDisaster
+//                layoutManager = LinearLayoutManager(this@MainActivity)
+//            }
+
+            // Grid layout manager
             rvDisaster.apply {
                 adapter = adapterDisaster
-                layoutManager = LinearLayoutManager(this@MainActivity)
+                layoutManager = GridLayoutManager(this@MainActivity, 2)
             }
         }
     }
