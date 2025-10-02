@@ -7,7 +7,8 @@ import com.example.disasterapp.databinding.ItemDisasterBinding
 
 data class Disaster (
     val nameDisaster: String="",
-    val disasterType: String=""
+    val disasterType: String="",
+    val icon: Int = 0
 )
 
 typealias OnClickDisaster = (Disaster) -> Unit
@@ -21,6 +22,7 @@ class DisasterAdapter(private val listDisaster : List<Disaster>, private val onC
             with(binding) {
                 txtDisasterName.text = data.nameDisaster
                 txtDisasterType.text = data.disasterType
+                imgDisasterIcon.setImageResource(data.icon)
                 itemView.setOnClickListener {
                     onClickDisaster(data)
                 }

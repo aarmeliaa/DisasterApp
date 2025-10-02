@@ -15,15 +15,22 @@ class MainActivity : AppCompatActivity() {
 
     fun generateDummy(): List<Disaster> {
         return listOf(
-            Disaster(nameDisaster = "Tsunami", disasterType = "Natural"),
+            Disaster(nameDisaster = "Tsunami", disasterType = "Natural",
+                icon = R.drawable.baseline_local_fire_department_24),
             Disaster(nameDisaster = "Volcanic Eruption", disasterType =
-                "Natural"),
-            Disaster(nameDisaster = "Earthquake", disasterType = "Natural"),
-            Disaster(nameDisaster = "Flood", disasterType = "Natural"),
-            Disaster(nameDisaster = "Fire", disasterType = "Natural"),
-            Disaster(nameDisaster = "Nuclear Accident", disasterType = "Man-made"),
-            Disaster(nameDisaster = "Terrorist Attack", disasterType = "Man-made"),
-            Disaster(nameDisaster = "War", disasterType = "Man-made")
+                "Natural", icon = R.drawable.baseline_local_fire_department_24),
+            Disaster(nameDisaster = "Earthquake", disasterType = "Natural",
+                icon = R.drawable.baseline_local_fire_department_24),
+            Disaster(nameDisaster = "Flood", disasterType = "Natural",
+                icon = R.drawable.baseline_local_fire_department_24),
+            Disaster(nameDisaster = "Fire", disasterType = "Natural",
+                icon = R.drawable.baseline_local_fire_department_24),
+            Disaster(nameDisaster = "Nuclear Accident", disasterType = "Man-made",
+                icon = R.drawable.baseline_local_fire_department_24),
+            Disaster(nameDisaster = "Terrorist Attack", disasterType = "Man-made",
+                icon = R.drawable.baseline_local_fire_department_24),
+            Disaster(nameDisaster = "War", disasterType = "Man-made",
+                icon = R.drawable.baseline_local_fire_department_24)
         )
     }
 
